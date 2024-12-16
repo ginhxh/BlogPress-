@@ -1,7 +1,8 @@
 <?php
   require_once 'config_seesion.inc.php';
 
-  require_once 'signup_view.inc.php'
+  require_once 'signup_view.inc.php';
+  require_once 'login_view.inc.php';
 
 ?>
 
@@ -21,6 +22,7 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            flex-direction: column;
         }
         .form-error{color: red;}
 
@@ -83,11 +85,18 @@
 <body>
     <div class="form-container">
         <h2>Login and Sign Up</h2>
-        <form action="loginup.inc.php" method="POST">
+        <form action="login.inc.php" method="POST">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="pwd" placeholder="Password">
             <button type="submit">Log In</button>
         </form>
+
+        <?php
+
+
+check_login_errors();
+    ?>
+
         <div class="form-separator">or</div>
         <form action="signup.inc.php" method="POST">
         <?php
